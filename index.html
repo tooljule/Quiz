@@ -499,7 +499,7 @@
   event.returnValue = false;
 }
 
-let bod = document.querySelector(".bod");
+let bod = document.querySelectorAll(".bod");
 bod.addEventListener("touchstart", absorbEvent);
 bod.addEventListener("touchend", absorbEvent);
 bod.addEventListener("touchmove", absorbEvent);
