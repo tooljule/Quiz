@@ -216,7 +216,7 @@
       <div id="quiz">
         <div class="question active">
           <div class="qu_text">
-            <p>Wie stellst du dir deinen Arbeitsalltag vor?</p>
+            <p class="bod">Wie stellst du dir deinen Arbeitsalltag vor?</p>
           </div>
           <div style="display: flex">
             <button onclick="updateScore('A,B')">
@@ -499,7 +499,7 @@
   event.returnValue = false;
 }
 
-let bod = document.querySelector(".bod");
+let bod = document.querySelectorAll(".bod");
 bod.addEventListener("touchstart", absorbEvent);
 bod.addEventListener("touchend", absorbEvent);
 bod.addEventListener("touchmove", absorbEvent);
