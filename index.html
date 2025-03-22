@@ -196,7 +196,7 @@
       }
     </style>
   </head>
-  <body>
+  <body id="bod">
     <div id="start-screen">
       <img
         style="max-width: 200px"
@@ -499,11 +499,11 @@
   event.returnValue = false;
 }
 
-let div1 = document.querySelector("#div1");
-div1.addEventListener("touchstart", absorbEvent);
-div1.addEventListener("touchend", absorbEvent);
-div1.addEventListener("touchmove", absorbEvent);
-div1.addEventListener("touchcancel", absorbEvent);
+let div1 = document.querySelector("#bod");
+bod.addEventListener("touchstart", absorbEvent);
+bod.addEventListener("touchend", absorbEvent);
+bod.addEventListener("touchmove", absorbEvent);
+bod.addEventListener("touchcancel", absorbEvent);
 
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
