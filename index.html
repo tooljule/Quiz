@@ -499,6 +499,7 @@
   event.returnValue = false;
 }
 
+      document.addEventListener("DOMContentLoaded", () => {
 let bods = document.querySelectorAll(".bod");
       bods.forEach(bod => {
 bod.addEventListener("touchstart", absorbEvent);
@@ -506,6 +507,7 @@ bod.addEventListener("touchend", absorbEvent);
 bod.addEventListener("touchmove", absorbEvent);
 bod.addEventListener("touchcancel", absorbEvent);
         });
+      });
 
       console.log(document.querySelectorAll(".bod")); 
 
