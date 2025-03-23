@@ -534,6 +534,10 @@ function enableScroll(){
     document.body.removeEventListener('touchmove', preventDefault);
 }
 
+        document.addEventListener("touchmove", function (e) {
+        e.preventDefault();
+    }, { passive: false });
+
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
           .register("./serviceWorker.js")
