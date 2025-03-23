@@ -507,6 +507,8 @@ bod.addEventListener("touchmove", absorbEvent);
 bod.addEventListener("touchcancel", absorbEvent);
         });
 
+      console.log(document.querySelectorAll(".bod")); 
+
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
           .register("./serviceWorker.js")
