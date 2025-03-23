@@ -514,6 +514,18 @@ bod.addEventListener("touchcancel", absorbEvent);
 
       console.log(document.querySelectorAll(".bod")); 
 
+
+      function preventDefault(e){
+    e.preventDefault();
+}
+
+function disableScroll(){
+    document.body.addEventListener('touchmove', preventDefault, { passive: false });
+}
+function enableScroll(){
+    document.body.removeEventListener('touchmove', preventDefault);
+}
+
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
           .register("./serviceWorker.js")
