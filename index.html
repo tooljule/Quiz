@@ -29,7 +29,7 @@ html {
 
       body {
         font-family: "WuerthBook", sans-serif;
-        background: #6fffff;
+        background: #ffffff;
         color: #333;
         display: flex;
         justify-content: center;
@@ -369,87 +369,92 @@ html {
         }
       }
 
-      function showResult() {
-        document.getElementById("quiz").style.display = "none";
-        resultDiv.style.display = "block";
+function showResult() {
+  document.getElementById("quiz").style.display = "none";
+  resultDiv.style.display = "block";
 
-        // Render resultTextContent into an HTML element
-const targetElement = document.getElementById("resultText");
-targetElement.innerHTML = resultTextContent;
+  let resultTextContent = ""; // Initialize as a string to store the result content
 
-        let resultTextContent = "";
-        if (
-          scoreA > scoreB &&
-          scoreA > scoreC &&
-          scoreA > scoreD &&
-          scoreA > scoreE
-        ) {
-          resultTextContent.innerHTML = "Außendienst </br></br> <p>Unterwegs zu sein ist für dich kein Problem. Dir sind Flexibilität und Selbstständigkeit bei der Arbeit sehr wichtig. Mit dem Wissen, ein starkes Team im Rücken zu haben, bist du das Bindeglied zwischen den Kunden und Würth. </p>";
-        } else if (
-          scoreB > scoreA &&
-          scoreB > scoreC &&
-          scoreB > scoreD &&
-          scoreB > scoreE
-        ) {
-          resultTextContent.innerHTML = "Spezialvertrieb";
-        } else if (
-          scoreC > scoreA &&
-          scoreC > scoreB &&
-          scoreC > scoreD &&
-          scoreC > scoreE
-        ) {
-          resultTextContent.innerHTML = "Telefon";
-        } else if (
-          scoreD > scoreA &&
-          scoreD > scoreB &&
-          scoreD > scoreC &&
-          scoreD > scoreE
-        ) {
-          resultTextContent.innerHTML = "Niederlassung";
-        } else if (
-          scoreE > scoreA &&
-          scoreE > scoreB &&
-          scoreE > scoreC &&
-          scoreE > scoreD
-        ) {
-          resultTextContent.innerHTML = "E-Business";
-        } else {
-          // Bei Gleichstand wird die Rangfolge berücksichtigt
-          if (
-            scoreA >= scoreB &&
-            scoreA >= scoreC &&
-            scoreA >= scoreD &&
-            scoreA >= scoreE
-          ) {
-            resultTextContent = "Außendienst";
-          } else if (
-            scoreB >= scoreA &&
-            scoreB >= scoreC &&
-            scoreB >= scoreD &&
-            scoreB >= scoreE
-          ) {
-            resultTextContent = "Spezialvertrieb";
-          } else if (
-            scoreC >= scoreA &&
-            scoreC >= scoreB &&
-            scoreC >= scoreD &&
-            scoreC >= scoreE
-          ) {
-            resultTextContent = "Telefon";
-          } else if (
-            scoreD >= scoreA &&
-            scoreD >= scoreC &&
-            scoreD >= scoreC &&
-            scoreD >= scoreE
-          ) {
-            resultTextContent = "Niederlassung";
-          } else {
-            resultTextContent = "E-Business";
-          }
-        }
+  // Determine the result based on scores
+  if (
+    scoreA > scoreB &&
+    scoreA > scoreC &&
+    scoreA > scoreD &&
+    scoreA > scoreE
+  ) {
+    resultTextContent = `
+      Außendienst </br></br>
+      <p>Unterwegs zu sein ist für dich kein Problem. Dir sind Flexibilität und Selbstständigkeit bei der Arbeit sehr wichtig. Mit dem Wissen, ein starkes Team im Rücken zu haben, bist du das Bindeglied zwischen den Kunden und Würth.</p>`;
+  } else if (
+    scoreB > scoreA &&
+    scoreB > scoreC &&
+    scoreB > scoreD &&
+    scoreB > scoreE
+  ) {
+    resultTextContent = `
+      <p>Spezialvertrieb</p>`;
+  } else if (
+    scoreC > scoreA &&
+    scoreC > scoreB &&
+    scoreC > scoreD &&
+    scoreC > scoreE
+  ) {
+    resultTextContent = `
+      <p>Telefon</p>`;
+  } else if (
+    scoreD > scoreA &&
+    scoreD > scoreB &&
+    scoreD > scoreC &&
+    scoreD > scoreE
+  ) {
+    resultTextContent = `
+      <p>Niederlassung</p>`;
+  } else if (
+    scoreE > scoreA &&
+    scoreE > scoreB &&
+    scoreE > scoreC &&
+    scoreE > scoreD
+  ) {
+    resultTextContent = `
+      <p>E-Business</p>`;
+  } else {
+    // Fallback in case of a tie
+    if (
+      scoreA >= scoreB &&
+      scoreA >= scoreC &&
+      scoreA >= scoreD &&
+      scoreA >= scoreE
+    ) {
+      resultTextContent = "<p>Außendienst</p>";
+    } else if (
+      scoreB >= scoreA &&
+      scoreB >= scoreC &&
+      scoreB >= scoreD &&
+      scoreB >= scoreE
+    ) {
+      resultTextContent = "<p>Spezialvertrieb</p>";
+    } else if (
+      scoreC >= scoreA &&
+      scoreC >= scoreB &&
+      scoreC >= scoreD &&
+      scoreC >= scoreE
+    ) {
+      resultTextContent = "<p>Telefon</p>";
+    } else if (
+      scoreD >= scoreA &&
+      scoreD >= scoreB &&
+      scoreD >= scoreC &&
+      scoreD >= scoreE
+    ) {
+      resultTextContent = "<p>Niederlassung</p>";
+    } else {
+      resultTextContent = "<p>E-Business</p>";
+    }
+  }
 
-        resultText.innerText = resultTextContent;
-      }
+  // Render the result content into the target element
+  resultText.innerHTML = resultTextContent; // Use innerHTML to parse and render HTML
+}
 
       function goBackToStart() {
         // Reset alles und gehe zurück zum Startbildschirm
