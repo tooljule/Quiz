@@ -29,7 +29,7 @@ html {
 
       body {
         font-family: "WuerthBook", sans-serif;
-        background: #ffffff;
+        background: #6fffff;
         color: #333;
         display: flex;
         justify-content: center;
@@ -373,7 +373,11 @@ html {
         document.getElementById("quiz").style.display = "none";
         resultDiv.style.display = "block";
 
-        let resultTextContent = document.getElementById("resultText");
+        // Render resultTextContent into an HTML element
+const targetElement = document.getElementById("resultText");
+targetElement.innerHTML = resultTextContent;
+
+        let resultTextContent = "";
         if (
           scoreA > scoreB &&
           scoreA > scoreC &&
