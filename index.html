@@ -29,7 +29,7 @@ html {
 
       body {
         font-family: "WuerthBook", sans-serif;
-        background: #ffffff;
+        background: #2fffff;
         color: #333;
         display: flex;
         justify-content: center;
@@ -306,13 +306,17 @@ html {
         </div>
       </div>
       <div id="result">
-        <h2 style="font-size: 42pt;">Dein Vertriebstyp ist</h2><center>
+        <h2 style="font-size: 42pt; margin-top: -120px">Dein Vertriebstyp ist</h2>
+        <center>
         <p
           id="resultText"
-          style="color: black; font-size: 64pt; font-weight: 900; height: 200px; max-width: 1000px; margin-top: -150px"
+          style="color: black; font-size: 64pt; font-weight: 900; height: 200px; max-width: 1000px"
         ></p>
-          <p>Lust auf Vertrieb bei Würth bekommen? Infos zu deinen Einstiegsmöglichkeiten und Kontakt zu unserem HR-Team findest du auf unseren Karriereseiten: </p> <img src="qrcode.jpeg" style="max-width: 160px"/>
         </center>
+        <div style="display: flex; flex-direction: row">
+        <img src="qrcode.jpeg" style="max-width: 160px"/>
+        <p style="font-size: 32pt">Lust auf Vertrieb bei Würth bekommen? Infos zu deinen Einstiegsmöglichkeiten und Kontakt zu unserem HR-Team findest du auf unseren Karriereseiten: </p>
+        </div>
       </div>
       <center>
         <button id="reset-btn" onclick="goBackToStart()">
