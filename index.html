@@ -373,42 +373,42 @@ html {
         document.getElementById("quiz").style.display = "none";
         resultDiv.style.display = "block";
 
-        let resultTextContent = "";
+        let resultTextContent = document.getElementById("resultText");
         if (
           scoreA > scoreB &&
           scoreA > scoreC &&
           scoreA > scoreD &&
           scoreA > scoreE
         ) {
-          resultTextContent = "Außendienst </br></br> <p>Unterwegs zu sein ist für dich kein Problem. Dir sind Flexibilität und Selbstständigkeit bei der Arbeit sehr wichtig. Mit dem Wissen, ein starkes Team im Rücken zu haben, bist du das Bindeglied zwischen den Kunden und Würth. </p>";
+          resultTextContent.innerHTML = "Außendienst </br></br> <p>Unterwegs zu sein ist für dich kein Problem. Dir sind Flexibilität und Selbstständigkeit bei der Arbeit sehr wichtig. Mit dem Wissen, ein starkes Team im Rücken zu haben, bist du das Bindeglied zwischen den Kunden und Würth. </p>";
         } else if (
           scoreB > scoreA &&
           scoreB > scoreC &&
           scoreB > scoreD &&
           scoreB > scoreE
         ) {
-          resultTextContent = "Spezialvertrieb";
+          resultTextContent.innerHTML = "Spezialvertrieb";
         } else if (
           scoreC > scoreA &&
           scoreC > scoreB &&
           scoreC > scoreD &&
           scoreC > scoreE
         ) {
-          resultTextContent = "Telefon";
+          resultTextContent.innerHTML = "Telefon";
         } else if (
           scoreD > scoreA &&
           scoreD > scoreB &&
           scoreD > scoreC &&
           scoreD > scoreE
         ) {
-          resultTextContent = "Niederlassung";
+          resultTextContent.innerHTML = "Niederlassung";
         } else if (
           scoreE > scoreA &&
           scoreE > scoreB &&
           scoreE > scoreC &&
           scoreE > scoreD
         ) {
-          resultTextContent = "E-Business";
+          resultTextContent.innerHTML = "E-Business";
         } else {
           // Bei Gleichstand wird die Rangfolge berücksichtigt
           if (
