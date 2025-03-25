@@ -29,7 +29,7 @@ html {
 
       body {
         font-family: "WuerthBook", sans-serif;
-        background: #ffffff;
+        background: #6fffff;
         color: #333;
         display: flex;
         justify-content: center;
@@ -304,15 +304,14 @@ html {
             <button onclick="updateScore('A,B,C')">Eigenverantwortung</button>
           </div>
         </div>
-      </div><center>
+      </div>
       <div id="result">
         <h2 style="font-size: 42pt">Dein Vertriebstyp ist</h2>
         <p
           id="resultText"
-          style="color: black; font-size: 64pt; font-weight: 900; height: 200px; width: 500px"
+          style="color: black; font-size: 64pt; font-weight: 900; height: 200px; max-width: 500px"
         ></p>
       </div>
-         </center>
       <center>
         <button id="reset-btn" onclick="goBackToStart()">
           Quiz zurücksetzen
@@ -385,7 +384,7 @@ function showResult() {
   ) {
     resultTextContent = `
       Außendienst </br>
-      <p style="font-size: 32pt">Unterwegs zu sein ist für dich kein Problem. Dir sind Flexibilität und Selbstständigkeit bei der Arbeit sehr wichtig. Mit dem Wissen, ein starkes Team im Rücken zu haben, bist du das Bindeglied zwischen den Kunden und Würth.</p>`;
+      <p style="font-size: 32pt; font-weight: 100">Unterwegs zu sein ist für dich kein Problem. Dir sind Flexibilität und Selbstständigkeit bei der Arbeit sehr wichtig. Mit dem Wissen, ein starkes Team im Rücken zu haben, bist du das Bindeglied zwischen den Kunden und Würth.</p>`;
   } else if (
     scoreB > scoreA &&
     scoreB > scoreC &&
