@@ -30,7 +30,7 @@ html {
 
       body {
         font-family: "WuerthBook", sans-serif;
-        background: #ffffff;
+        background: #5fffff;
         color: #333;
         display: flex;
         justify-content: center;
@@ -315,9 +315,9 @@ html {
           style="color: black; font-size: 64pt; font-weight: 900; height: 45vh; max-width: 860px; margin-block: 0px; color: #c70404; line-height: 1.2;"
         ></p>
         
-        <div class="bod" style="display: flex; flex-direction: row; margin-block: 0px; color: #c70404; border: 1px solid yellow; max-width: 860px;">
+        <div class="bod" style="display: flex; flex-direction: row; margin-block: 0px; color: #c70404; max-width: 860px;">
         <img src="qrcode.jpeg" style="width: 160px; height: 160px;"/>
-        <p style="font-size: 24pt; margin-block: 0px; text-align: left; margin-left: 20px; color: black; line-height: 1.2">Lust auf Vertrieb bei Würth bekommen? Infos zu deinen Einstiegsmöglichkeiten und Kontakt zu unserem HR-Team findest du auf unseren Karriereseiten. </p>
+        <p style="font-size: 24pt; margin-block: 0px; text-align: left; margin-left: 20px; color: black; line-height: 1.2">Lust auf Vertrieb bei Würth bekommen? </br> Infos zu deinen Einstiegsmöglichkeiten und Kontakt zu unserem HR-Team findest du auf unseren Karriereseiten. </p>
         </div></center>
       </div>
       <center>
@@ -550,6 +550,20 @@ bod.addEventListener("touchcancel", absorbEvent);
 
       console.log(document.querySelectorAll(".bod")); 
 
+      let buttons = document.querySelectorAll("button");
+      buttons.forEach(button => {
+        
+              const handlePress = () => {
+    console.log("Button pressed down!");
+    // Add your action here
+  };
+        
+  button.addEventListener("mousedown", handlePress);  // For mouse devices
+  button.addEventListener("touchstart", handlePress); // For touch devices
+        });
+      });
+
+  
 
       function preventDefault(e){
     e.preventDefault();
