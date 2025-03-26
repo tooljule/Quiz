@@ -31,7 +31,7 @@ html {
 
       body {
         font-family: "WuerthBook", sans-serif;
-        background: #ffffff;
+        background: #4fffff;
         color: #333;
         display: flex;
         justify-content: center;
@@ -552,14 +552,15 @@ bod.addEventListener("touchcancel", absorbEvent);
       console.log(document.querySelectorAll(".bod")); 
 
       // Get the button element
-    const button = document.querySelector("button");
+    const button = document.querySelectorAll("button");
 
           // Define a timer variable
     let pressTimer;
 
     // Define the hold duration (in milliseconds)
-    const holdDuration = 2000; // 2 seconds
+    const holdDuration = 1000; // 2 seconds
 
+      button.forEach(button => {
           // Event listener for "mousedown" or "touchstart"
     button.addEventListener("mousedown", () => {
       pressTimer = setTimeout(() => {
@@ -581,7 +582,7 @@ bod.addEventListener("touchcancel", absorbEvent);
     button.addEventListener("touchend", () => {
       clearTimeout(pressTimer); // Stops the timer on touch devices
     });
-
+ });
       function preventDefault(e){
     e.preventDefault();
 }
