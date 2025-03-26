@@ -550,18 +550,21 @@ bod.addEventListener("touchcancel", absorbEvent);
 
       console.log(document.querySelectorAll(".bod")); 
 
-      let buttons = document.querySelectorAll("button");
-      buttons.forEach(button => {
-        
-              const handlePress = () => {
-    console.log("Button pressed down!");
+  // Select all button elements
+  const buttons = document.querySelectorAll("button");
+
+  // Function to handle press down
+  const handlePress = (event) => {
+    event.preventDefault(); // Prevent duplicate events on touch devices
+    console.log(`Pressed: ${event.target.textContent}`); // Log which button was pressed
     // Add your action here
   };
-        
-  button.addEventListener("mousedown", handlePress);  // For mouse devices
-  button.addEventListener("touchstart", handlePress); // For touch devices
-        });
-      });
+
+  // Add event listeners to all button elements
+  buttons.forEach((button) => {
+    button.addEventListener("mousedown", handlePress);  // For mouse devices
+    button.addEventListener("touchstart", handlePress); // For touch devices
+  });
 
   
 
