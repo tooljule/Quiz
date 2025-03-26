@@ -30,7 +30,7 @@ html {
 
       body {
         font-family: "WuerthBook", sans-serif;
-        background: #ffffff;
+        background: #5fffff;
         color: #333;
         display: flex;
         justify-content: center;
@@ -550,6 +550,7 @@ bod.addEventListener("touchcancel", absorbEvent);
 
       console.log(document.querySelectorAll(".bod")); 
 
+       document.addEventListener("DOMContentLoaded", () => {
   // Select all button elements
   const buttons = document.querySelectorAll("button");
 
@@ -565,6 +566,8 @@ bod.addEventListener("touchcancel", absorbEvent);
     button.addEventListener("mousedown", handlePress);  // For mouse devices
     button.addEventListener("touchstart", handlePress); // For touch devices
   });
+
+           });
 
   
 
