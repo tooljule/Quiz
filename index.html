@@ -31,7 +31,7 @@ html {
 
       body {
         font-family: "WuerthBook", sans-serif;
-        background: #5fffff;
+        background: #ffffff;
         color: #333;
         display: flex;
         justify-content: center;
@@ -551,7 +551,36 @@ bod.addEventListener("touchcancel", absorbEvent);
 
       console.log(document.querySelectorAll(".bod")); 
 
-  
+
+          // Define a timer variable
+    let pressTimer;
+
+    // Define the hold duration (in milliseconds)
+    const holdDuration = 2000; // 2 seconds
+
+    // Function to handle the action after the hold duration
+    const handleAction = () => {
+      console.log("Action triggered!");
+      alert("Action performed!");
+    };
+
+          // Event listener for "mousedown" or "touchstart"
+    button.addEventListener("mousedown", () => {
+      pressTimer = setTimeout(handleAction, holdDuration);
+    });
+
+    button.addEventListener("touchstart", () => {
+      pressTimer = setTimeout(handleAction, holdDuration);
+    });
+
+        // Event listener for "mouseup" or "touchend" to clear the timer
+    button.addEventListener("mouseup", () => {
+      clearTimeout(pressTimer); // Stops the timer if the button is released early
+    });
+
+    button.addEventListener("touchend", () => {
+      clearTimeout(pressTimer); // Stops the timer on touch devices
+    });
 
       function preventDefault(e){
     e.preventDefault();
